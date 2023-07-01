@@ -46,3 +46,20 @@ window.addEventListener("scroll", function () {
     backTopBtn.classList.remove("active");
   }
 });
+
+function SubForm() {
+  let data =  $(".contact-form").serializeArray();
+  // console.log(data);
+
+  $.ajax({
+      url: 'https://api.apispreadsheets.com/data/O7xaDGeVsU3i79pD/',
+      type: 'post',
+      data:data,
+      success: function () {
+          alert("Feedback sent successfully :)")
+      },
+      error: function () {
+          alert("There was an error :(")
+      }
+  });
+}
